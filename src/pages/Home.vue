@@ -1,10 +1,10 @@
 <template>
     <section class="row flex flex-wrap justify-center align-center h-full ">
       <div class="home-content p-2 mx-2 ">
-        <div v-if="hasAmount">
+        <div v-if="hasAmount || hasError">
           <h3 class="result-body">
             {{
-            `Olá ${name}, juntando ${convertMoney(investment)} todo mês, você terá ${convertMoney(amount)} em ${timeFormat(years)}`
+             this.error || `Olá ${name}, juntando ${convertMoney(investment)} todo mês, você terá ${convertMoney(amount)} em ${timeFormat(years)}`
             }}
           </h3>
           <div class="home-footer mx-1 mt-2">
@@ -85,6 +85,9 @@ export default {
     hasAmount() {
       return !!this.amount
     },
+    hasError() {
+      return !!this.error
+    },
   },
   data() {
     return {
@@ -94,6 +97,7 @@ export default {
       investment: '',
       years: '',
       amount: '',
+      error: '',
     }
   },
   methods: {
@@ -102,6 +106,7 @@ export default {
       this.investment = ''
       this.years = ''
       this.amount = ''
+      this.error = ''
     },
     convertMoney(value) {
       return currencyFormat(`${value}`)
@@ -118,7 +123,9 @@ export default {
       .then(({ data }) => {
         this.amount = data?.result
       })
-      .catch((error) => { console.log(error) })
+      .catch(() => {
+        this.error = 'Algo deu errado!  Que tal refazer a operação?'
+      })
       .finally(() => {
         this.loading = false
       })
@@ -137,6 +144,7 @@ export default {
 .result-body {
   font-family: $font-family-02;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .simulator-title {
   font-family: $font-family-02;

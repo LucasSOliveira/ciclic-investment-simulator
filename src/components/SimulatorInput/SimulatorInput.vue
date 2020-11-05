@@ -173,7 +173,6 @@ export default {
     },
     onInput(event) {
       if (this.disabled) return
-      console.log()
       this.$emit('input', event.target.value)
     },
     onFocus() {
