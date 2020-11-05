@@ -1,7 +1,9 @@
 {
-  "name": "ciclic-interest-calculator",
-  "version": "0.1.0",
+  "name": "ciclic-investment-simulation",
+  "version": "1.0.0",
   "private": true,
+  "description": "Ciclic Investment simulation with compound interest",
+  "author": "Lucas Santos de Oliveira",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -11,8 +13,10 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
+    "v-money": "^0.8.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
+    "vue-the-mask": "^0.11.1",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -25,12 +29,14 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
+    "axios": "^0.20.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-axios": "~0.0.4",
     "vue-template-compiler": "^2.6.11"
   }
 }

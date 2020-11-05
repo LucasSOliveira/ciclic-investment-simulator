@@ -1,0 +1,8 @@
+.home-footer {
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  @include device-size(md) {
+    justify-content: center;
+  }
+}

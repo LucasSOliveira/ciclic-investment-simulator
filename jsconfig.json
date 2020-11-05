@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "assets/*": ["./src/assets/*"],
+      "utils/*": ["./src/assets/utils/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist", ".vscode", ".github"],
+}

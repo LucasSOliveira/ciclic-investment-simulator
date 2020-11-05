@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+@import './utils/reset';
+@import './utils/normalize';
+@import './utils/grid.brekpoints';
+
+@import "./pages/home";
+
+@import "./layouts/grid";
+@import "./layouts/colors";
+@import "./layouts/typography";
+@import "./layouts/flexbox";
+@import "./layouts/sizes";
+@import "./layouts/spacing";
+@import "./layouts/states";
+@import "./layouts/ui";
+
+@import "./ui/transitions";
+
+#app, body {
+  font-family: $font-family-01;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-brand-primary;
+  background: $color-ui-gray;
+  height: 100%;
+}
+
+div { font-family: $font-family-01; }
+
+*, *::after, *::before { box-sizing: border-box; }
